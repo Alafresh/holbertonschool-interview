@@ -1,14 +1,18 @@
 #!/usr/bin/python3
-def checkBoxes():
-# por definir
-
 def canUnlockAll(boxes):
-    boolList = []
-    for i in boxes:
-        boolList.append(False)
-    for j in boxes[0]:
-        if j < len(boxes):
-            booList[j] = True
-            for l in boxes[j]:
-                if l < len(boxes):
+"""Algorithm  that unlock all boxes"""
 
+    keySet = []
+
+"""Check box by box"""
+    for i in range(len(boxes)):
+        for j in boxes[i]:
+            if j >= len(boxes):
+                return False
+            keySet.append(j)
+
+"""Hardcode"""
+    if len(set(keySet)) == len(boxes):
+        return True
+    else:
+        return False
