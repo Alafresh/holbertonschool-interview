@@ -7,9 +7,7 @@ def canUnlockAll(boxes):
     """Check box by box"""
     for i in keySet:
         for j in boxes[i]:
-            if j >= len(boxes):
-                return False
-            elif j not in keySet:
+            if j not in keySet and j < len(boxes):
                 keySet.append(j)
 
     """Hardcode"""
