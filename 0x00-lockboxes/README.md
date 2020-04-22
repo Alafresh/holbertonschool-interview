@@ -1,3 +1,2 @@
 #   README
-### Learning Objectives
-  - essential training for interviews
+#### essential training for interviews
