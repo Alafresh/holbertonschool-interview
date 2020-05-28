@@ -11,7 +11,8 @@ int is_palindrome(listint_t **head)
 	if (head == NULL)
 		return (1);
 
-	listint_t *current = (*head);
+	listint_t *current;
+	current = (*head);
 	int size = getCount(*head);
 	int tmp[size];
 	int i = 0;
@@ -23,7 +24,8 @@ int is_palindrome(listint_t **head)
 		i++;
 	}
 
-	int length = sizeof(tmp) / sizeof(tmp[0]);
+	int length;
+	length = sizeof(tmp) / sizeof(tmp[0]);
 	int j;
 
 	for (j = 0; j < length - 1; j++)
