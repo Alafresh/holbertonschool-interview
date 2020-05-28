@@ -1,6 +1,5 @@
 #include "lists.h"
 
-
 /**
 * getCount - returns the length of a linked list
 * @head: pointer to head
@@ -54,4 +53,3 @@ int is_palindrome(listint_t **head)
 	}
 	return (1);
 }
-
