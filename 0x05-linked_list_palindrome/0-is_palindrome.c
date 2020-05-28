@@ -9,15 +9,15 @@
 
 int getCount(listint_t *head)
 {
-        int count = 0;
-        listint_t *current = head;
+	int count = 0;
+	listint_t *current = head;
 
-        while (current != NULL)
-        {
-                count++;
-                current = current->next;
-        }
-        return (count);
+	while (current != NULL)
+	{
+		count++;
+		current = current->next;
+	}
+	return (count);
 }
 
 /**
@@ -28,29 +28,29 @@ int getCount(listint_t *head)
 
 int is_palindrome(listint_t **head)
 {
-        if (head == NULL)
-                return (1);
+	if (head == NULL)
+		return (1);
 
-        listint_t *current = (*head);
-        int size = getCount(*head);
-        int tmp[size];
-        int i = 0;
+	listint_t *current = (*head);
+	int size = getCount(*head);
+	int tmp[size];
+	int i = 0;
 
-        while (current != NULL)
-        {
-                tmp[i] = current->n;
-                current = current->next;
-                i++;
-        }
+	while (current != NULL)
+	{
+		tmp[i] = current->n;
+		current = current->next;
+		i++;
+	}
 
-        int length = sizeof(tmp) / sizeof(tmp[0]);
-        int j;
+	int length = sizeof(tmp) / sizeof(tmp[0]);
+	int j;
 
-        for (j = 0; j < length - 1; j++)
-        {
-                if (tmp[i - 1] != tmp[j])
-                        return (0);
-                i--;
-        }
-        return (1);
+	for (j = 0; j < length - 1; j++)
+	{
+		if (tmp[i - 1] != tmp[j])
+			return (0);
+		i--;
+	}
+	return (1);
 }
