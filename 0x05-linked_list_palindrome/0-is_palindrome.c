@@ -1,35 +1,57 @@
 #include "lists.h"
 
+
 /**
- * is_palindrome - check if a linked list is palindrome
- * @head: head od linked list
- * Return: 0 if is palindrome
- */
+* getCount - returns the length of a linked list
+* @head: pointer to head
+* Return: the length
+*/
+
+int getCount(listint_t *head)
+{
+	int count = 0;
+	listint_t *current = head;
+
+	while (current != NULL)
+	{
+		count++;
+		current = current->next;
+	}
+	return (count);
+}
+
+/**
+* is_palindrome - checks if a singly linked list is a palindrome
+* @head: double pointer to head
+* Return: 1 or 0
+*/
 
 int is_palindrome(listint_t **head)
 {
-	int idx = 0;
-	int k = 0;
-	listint_t *copy_head = *head;
-	int array[99999];
-
-	if (*head == NULL)
+	if (head == NULL)
 		return (1);
-	copy_head = *head;
 
-	for (idx = 0; copy_head != NULL; idx++)
+	listint_t *current = (*head);
+	int size = getCount(*head);
+	int tmp[size];
+	int i = 0;
+
+	while (current != NULL)
 	{
-		array[idx] = copy_head->n;
-		copy_head = copy_head->next;
+		tmp[i] = current->n;
+		current = current->next;
+		i++;
 	}
-	idx--;
-	if (idx < 2)
-		return (1);
 
-	for (k = 0; k <= idx / 2; ++k)
+	int length = sizeof(tmp) / sizeof(tmp[0]);
+	int j;
+
+	for (j = 0; j < length - 1; j++)
 	{
-		if (array[k] != array[idx - k])
+		if (tmp[i - 1] != tmp[j])
 			return (0);
+		i--;
 	}
 	return (1);
+}
 
