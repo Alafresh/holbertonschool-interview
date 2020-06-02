@@ -9,4 +9,5 @@ void changes(int grid1[3][3]);
 void add_grids(int grid1[3][3], int grid2[3][3]);
 int is_stable(int grid1[3][3]);
 
-#endif 
+#endif
+
