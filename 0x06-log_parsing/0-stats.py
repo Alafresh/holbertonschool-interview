@@ -21,6 +21,8 @@ try:
                 if j > 0:
                     print("{}: {}".format(i, j))
 except KeyboardInterrupt:
+    pass
+finally:
     print("File size: {}".format(size))
     for i, j in sorted(statusErrors.items()):
         if j > 0:
