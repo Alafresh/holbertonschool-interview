@@ -18,8 +18,10 @@ try:
         if count % 10 == 0:
             print("File size: {}".format(size))
             for i, j in sorted(statusErrors.items()):
-                print("{}: {}".format(i, j))
+                if j > 0:
+                    print("{}: {}".format(i, j))
 except KeyboardInterrupt:
     print("File size: {}".format(size))
     for i, j in sorted(statusErrors.items()):
-        print("{}: {}".format(i, j))
+        if j > 0:
+            print("{}: {}".format(i, j))
