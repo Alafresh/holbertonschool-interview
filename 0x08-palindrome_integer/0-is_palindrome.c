@@ -1,0 +1,27 @@
+#include "palindrome.h"
+
+/**
+* is_palindrome - checks whether or not a given unsigned integer is a palin
+* @n: number to be checked
+* Return: 1 if n is a palindrome, and 0 otherwise
+*/
+
+int is_palindrome(unsigned long n)
+{
+	int div = 1;
+
+	while (n / div >= 10)
+		div *= 10;
+
+	while (n != 0)
+	{
+		int lead = n / div;
+		int tail = n % 10;
+
+		if (lead != tail)
+			return (0);
+		n = (n % div) / 10;
+		div = div / 100;
+	}
+	return (1);
+}
