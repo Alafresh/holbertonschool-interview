@@ -23,11 +23,11 @@ avl_t *binary_tree(avl_t *p, int v)
 
 /**
  * insert - it inserts a node for a binary tree
- * @root: this is the head of our binary tree
- * @array: This is the array with elements to index in our binary tree
- * @size: this is the end position of the array
- * @start: this is the start of the array
- * Return: pointer to new node or NULL if it fails
+ * @r: head of binary tree
+ * @array: the array with elements
+ * @s: end position of the array
+ * @start: start of the array
+ * Return: pointer to new node or NULL
  */
 avl_t *insert(avl_t **r, int s, int start, int *array)
 {
