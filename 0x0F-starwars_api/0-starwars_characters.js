@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const req = require('req');
+const req = require('request');
 
 req('https://swapi-api.hbtn.io/api/films/' + process.argv[2], async function (e, res, content) {
   if (e) {
