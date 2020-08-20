@@ -5,7 +5,7 @@
  *
  * @list: is a pointer to the head
  * @value: is the value to search for
- * Return: first node where value is located 
+ * Return: first node where value is located
  */
 
 skiplist_t *linear_skip(skiplist_t *list, int value)
