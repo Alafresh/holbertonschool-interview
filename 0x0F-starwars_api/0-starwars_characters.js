@@ -17,7 +17,7 @@ req('https://swapi-api.hbtn.io/api/films/' + process.argv[2], async function (e,
           }
         });
       });
-      await p.then(content => console.log(JSON.parse(content).name)).catch(e => console.log(e))
+      await p.then(content => console.log(JSON.parse(content).name)).catch(e => console.log(e));
     }
   }
 });
