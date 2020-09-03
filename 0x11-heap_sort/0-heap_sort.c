@@ -1,48 +1,59 @@
 #include "sort.h"
 
+/**
+ * swap - Function to swap to nodes
+ * @array: list
+ * @size: size of array
+ * @i: root
+ * @s: size
+ *
+ * Return: Nothing
+ */
+void swap(int *array, int size, int i, int s)
+{
+	int largest = i, temp;
+	int l = 2 * i + 1;
+	int r = 2 * i + 2;
+
+	if (l < size && array[l] > array[largest])
+		largest = l;
+	if (r < size && array[r] > array[largest])
+		largest = r;
+
+	if (largest != i)
+	{
+		temp = array[i];
+		array[i] = array[largest];
+		array[largest] = temp;
+		print_array(array, s);
+		swap(array, size, largest, s);
+	}
+}
 
 /**
- * heap_sort - sorts an array of integers in ascending order using the Heapsort
- * @array: array of numbers
- * @size: Size of the array
- * Return: 0
+ * heap_sort - Function that sorts an array of ints in ascending order
+ * @array: list
+ * @size: size of array
+ *
+ * Return: Nothing
  */
 void heap_sort(int *array, size_t size)
 {
-	size_t len = size, raiz, tmp;
-	ssize_t ult, parent;
-	int buff;
+	int i, temp;
 
 	if (size < 2)
 		return;
-	while (len > 1)
+
+	for (i = size / 2 - 1; i >= 0; i--)
+		swap(array, size, i, size);
+
+	for (i = size - 1; i >= 0; i--)
 	{
-		ult = size - 1;
-		parent = (ult - 1) / 2;
-		while (parent >= 0)
-		{
-			parent--;
-			raiz = parent;
-			while ((2 * raiz + 1) < len)
-			{
-				tmp = raiz;
-				if (array[(2 * raiz + 1)] > array[raiz])
-					tmp = (2 * raiz + 1);
-				if (2 * raiz + 2 < len && array[2 * raiz + 2] > array[tmp])
-					tmp = 2 * raiz + 2;
-				if (tmp == raiz)
-					break;
-				buff = array[raiz];
-				array[raiz] = array[tmp];
-				array[tmp] = buff;
-				print_array(array, size);
-				raiz = tmp;
-			}
-		}
-		buff = array[0];
-		array[0] = array[len - 1];
-		array[len - 1] = buff;
-		print_array(array, size);
-		len--;
+		temp = array[0];
+		array[0] = array[i];
+		array[i] = temp;
+		if (i != 0)
+			print_array(array, size);
+		swap(array, i, 0, size);
 	}
 }
