@@ -2,7 +2,7 @@
 
 
 /**
- * heap_sort - sorts an array of integers in ascending order using the Heap sort algorithm
+ * heap_sort - sorts an array of integers in ascending order using the Heapsort
  * @array: array of numbers
  * @size: Size of the array
  * Return: 0
