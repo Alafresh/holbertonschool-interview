@@ -13,7 +13,7 @@
 void print_array(int *array, size_t left, size_t right)
 {
 	printf("Searching in array: ");
-	while(left <= right)
+	while (left <= right)
 	{
 		printf("%i", array[left]);
 		if (left < right)
